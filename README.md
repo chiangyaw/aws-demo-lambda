@@ -6,24 +6,6 @@ This project deploys an intentionally vulnerable AWS Lambda function integrated 
 
 ---
 
-## Features
-
-The deployed Lambda function contains the following vulnerabilities:
-
-1. **SQL Injection**:
-   - The API allows unsanitized SQL queries to be executed directly on a SQLite database.
-   - Example Payloads:
-     - Normal: `?sql_query=SELECT * FROM users`
-     - Malicious: `?sql_query=DROP TABLE users`
-
-2. **Command Injection**:
-   - The API accepts unsanitized shell commands, allowing remote execution.
-   - Example Payloads:
-     - Normal: `?command=ls`
-     - Malicious: `?command=rm -rf /tmp`
-
----
-
 ## How It Works
 
 1. **Lambda Function**:
